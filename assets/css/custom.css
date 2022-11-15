@@ -1,0 +1,143 @@
+.landing-graphic {
+    width: 35vw;
+    display: flex;
+    margin-top: 15vh;
+  }
+  .landing-graphic svg {
+    position: absolute;
+    width: 35vw;
+    margin-left: 5vw;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  #base {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 0;
+    animation: dash 4s both;
+  }
+  #orange {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 0;
+    animation-delay: 0.25s !important;
+    animation: dash 2s both;
+  }
+  #yellow {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 0;
+    animation-delay: 0.5s !important;
+    animation: dash 2s both;
+  }
+  #green {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 0;
+    animation-delay: 0.75s !important;
+    animation: dash 2s both;
+  }
+  #blue {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 0;
+    animation-delay: 1s !important;
+    animation: dash 2s both;
+  }
+  #purple {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 0;
+    animation-delay: 1.25s !important;
+    animation: dash 2s both;
+  }
+  #pink {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 0;
+    animation-delay: 1.5s !important;
+    animation: dash 2s both;
+  }
+  @keyframes dash {
+    from {
+      stroke-dashoffset: 1000;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  .headshot img {
+    border-radius: 5px;
+    border: 2px solid #5d5d5d;
+    /* width: 36vw !important; */
+    margin-bottom: 20px;
+  }
+  /* .tabs-container {
+    width: 50vw;
+  } */
+  .exp-header {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 5px;
+	}
+	.skills-list, .key-list {
+		display: flex;
+		flex-wrap: wrap;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	.skills-list li {
+		padding: 8px 8px 0px 8px;
+		margin: 3px;
+		border-radius: 5px;
+	}
+	.key-list div {
+		padding: 3px 8px;
+		margin: 10px 3px;
+		border-radius: 5px;
+	}
+	.right-side {
+		display: flex;
+    margin-right: 30px;
+	}
+  .landing-text {
+    margin: 30vh 9vw;
+    width: 50%;
+  }
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0px 5px 20px 5px;
+    transition: 0.2s ease-in-out;
+  }
+  .social-icon:hover {
+    transform: scale(1.075);
+  }
+
+  @media (max-width: 800px) {
+		#landing {
+			flex-direction: column;
+			margin-top: -20vh;
+			margin-bottom: 25vh;
+			justify-content: center;
+			padding: none !important;
+		}
+		.landing-text {
+			width: 90vw;
+			margin: 30vh 5vw;
+		}
+		.landing-graphic {
+			margin: 0 auto;
+			width: 80%;
+      transform: translateY(-35vh);
+		}
+		.landing-graphic svg {
+			margin: 0 auto;
+			width: 80%;
+			margin-left: 23vw;
+		}
+	
+	}
+  @media (max-width: 1200px) and (min-width: 800px) {
+    .landing-graphic svg {
+			margin-top: 16vh;
+		}
+  }
+  .nav-item .active {
+    border-bottom: 3px solid rgb(46,104,194) !important;
+    color: rgb(46,104,194) !important; 
+  }
