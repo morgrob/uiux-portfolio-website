@@ -137,6 +137,11 @@
 			margin-top: 16vh;
 		}
   }
+  @media (max-width: 1400px) and (min-width: 800px) {
+    .landing-graphic svg {
+			margin-top: 8.5vh;
+		}
+  }
   .nav-item .active {
     border-bottom: 3px solid rgb(46,104,194) !important;
     color: rgb(46,104,194) !important; 
