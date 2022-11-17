@@ -130,7 +130,6 @@
 			width: 80%;
 			margin-left: 23vw;
 		}
-	
 	}
   @media (max-width: 1200px) and (min-width: 800px) {
     .landing-graphic svg {
@@ -145,4 +144,93 @@
   .nav-item .active {
     border-bottom: 3px solid rgb(46,104,194) !important;
     color: rgb(46,104,194) !important; 
+  }
+
+  .page-container {
+    margin: 15px 40px;
+  }
+  .project-container {
+    margin: 0 auto;
+    width: 60vw !important;
+  }
+  /* .buttons a {
+    margin: 0 6px;
+  } */
+  #stream, #swing, #render, #tread, #rom, #careai {
+    padding-top: 40px;
+  }
+  .intel-display {
+    width: 88%;
+    margin-left: 6% !important;
+    margin-right: 6% !important;
+    margin-top: -50px;
+    margin-bottom: 20px;
+  }
+  .project-container p {
+    font-size: 16px;
+  }
+  .images img {
+    margin-bottom: 25px;
+    border-radius: 3px;
+    border: 1px solid rgb(81, 81, 81); 
+  }
+  .footer {
+    margin-top: 50px;
+  }
+  .convictions-display {
+    transform: translateY(-20px);
+  }
+  .tetris-display, .weather-display {
+    width: 78%;
+    margin: 0 11%;
+    margin-bottom: 40px;
+  }
+  .appteam-display {
+    width: 84%;
+    margin: 0 5% 2% 15%;
+  }
+  table, th, td {
+    border: 1px solid rgb(81, 81, 81) !important;
+    border-collapse: collapse !important;
+  }
+  th, td {
+    padding: 10px;
+  }
+  table {
+    margin-bottom: 20px;
+  }
+  .project-container h3 {
+    margin-top: 35px;
+  }
+  .userflow {
+    width: 36%;
+    margin: 20px 32%;
+  }
+  blockquote {
+    border-left: 3px solid rgb(161, 161, 167);
+    padding-left: 10px;
+    margin: 30px 0 !important;
+    font-size: 18px;
+    font-style: italic;
+  }
+  .chromatic-display {
+    width: 70%;
+    margin: 0 15%;
+    margin-bottom: -5%;
+  }
+  .buttons {
+    flex-wrap: wrap;
+  }
+  .buttons a {
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+  @media (max-width: 1000px) {
+    .project-container {
+        width: 90vw !important;
+    }
+    .chromatic-display {
+        width: 90%;
+        margin: 0 5%;
+    }
   }
