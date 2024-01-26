@@ -185,10 +185,6 @@
     margin: 0 11%;
     margin-bottom: 40px;
   }
-  .appteam-display {
-    width: 84%;
-    margin: 0 5% 2% 15%;
-  }
   table, th, td {
     border: 1px solid rgb(81, 81, 81) !important;
     border-collapse: collapse !important;
@@ -213,7 +209,7 @@
     font-size: 18px;
     font-style: italic;
   }
-  .chromatic-display {
+  .chromatic-display, .appteam-display {
     width: 70%;
     margin: 0 15%;
     margin-bottom: -5%;
