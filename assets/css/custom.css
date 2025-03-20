@@ -150,8 +150,7 @@
     margin: 0px 40px;
   }
   .project-container {
-    margin: 0 auto;
-    width: 60vw !important;
+    width: 70vw !important;
   }
   /* .buttons a {
     margin: 0 6px;
@@ -167,7 +166,7 @@
     margin-bottom: 20px;
   }
   .project-container p {
-    font-size: 16px;
+    font-size: 14pt;
   }
   .images img {
     margin-bottom: 25px;
@@ -225,8 +224,95 @@
     .project-container {
         width: 90vw !important;
     }
-    .chromatic-display {
-        width: 90%;
-        margin: 0 5%;
+  }
+  @media (min-width: 1000px) {
+    .project-landing {
+      height: 200vh !important;
     }
+  }
+  #project-header {
+    font-size: 50pt;
+  }
+
+  .project-info {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    height: 100%;
+  }
+  .info-block-main {
+    color: white;
+    font-size: 14pt;
+    font-weight:400;
+  }
+  .eyebrow {
+    font-size: 12pt;
+    letter-spacing: 2px;
+  }
+  .project-container p {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .project-section {
+    margin: 100px 0px;
+  }
+  .feature-mvp {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 18px;
+    border-radius: 10px;
+    height: 100%;
+  }
+  .separator {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+  .project-logo {
+    height: 150px;
+    margin: 30px 0px;
+    border-radius: 20px;
+  }
+  .project-landing {
+    margin-bottom: 100px;
+    height: 50% !important;
+    /* border: 1px solid red; */
+  }
+
+  th {
+    color: white;
+    font-size: 14pt;
+  }
+  td {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14pt;
+  }
+  .landing-cover {
+    border-radius: 15px;
+    height: 85vh;
+    width: auto;
+  }
+  .landing-logo {
+    border-radius: 15px;
+    width: 100px;
+    margin-bottom: 20px;
+  }
+  .left-info {
+    /* border: 1px solid red; */
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:end;
+  }
+  .luminary-wireframes img {
+    margin-bottom: 30px;
+  }
+  video {
+    border-radius: 35px;
+    height: 475px;
+  }
+  .image-subtitle {
+    color: rgba(255, 255, 255, 0.5) !important;
+    font-size: 12pt;
+  }
+  ul {
+    margin-left: 40px;
   }
