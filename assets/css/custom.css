@@ -316,3 +316,9 @@
   ul {
     margin-left: 40px;
   }
+  .figma-button img {
+    width: 20px;
+  }
+  .figma-button {
+    padding: 20px;
+  }
