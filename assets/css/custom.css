@@ -147,7 +147,7 @@
   }
 
   .page-container {
-    margin: 0px 40px;
+    margin: 0px 40px !important;
   }
   .project-container {
     width: 70vw !important;
@@ -202,11 +202,13 @@
     margin: 20px 32%;
   }
   blockquote {
-    border-left: 3px solid rgb(161, 161, 167);
+    border-left: 3px solid #2e69c2;
+    color: white !important;
+    font-weight: bold;
     padding-left: 10px;
-    margin: 30px 0 !important;
-    font-size: 18px;
+    /* margin: 20px !important; */
     font-style: italic;
+    font-size: 14pt;
   }
   .chromatic-display, .appteam-display {
     width: 70%;
@@ -305,9 +307,12 @@
   .luminary-wireframes img {
     margin-bottom: 30px;
   }
-  video {
+  .phone-video {
     border-radius: 35px;
     height: 475px;
+  }
+  .web-video, .web-image {
+    border-radius: 10px;
   }
   .image-subtitle {
     color: rgba(255, 255, 255, 0.5) !important;
@@ -316,9 +321,47 @@
   ul {
     margin-left: 40px;
   }
-  .figma-button img {
-    width: 20px;
+  .sketch {
+    object-fit:contain;
   }
-  .figma-button {
-    padding: 20px;
+  .sketches {
+    display: flex;
+    align-items: flex-start;
   }
+  h5 {
+    margin-top: 15px !important;
+  }
+  .mockup-screen {
+    border-radius: 20px;
+  }
+  .bubbly-quotes {
+    margin-left: 40px;
+  }
+  #extra-space {
+    margin-bottom: 30px;
+  }
+  .card-title-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .role-tag {
+    color: white;
+    margin-bottom: 10px;
+  }
+  .card-text {
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+  }
+  .year-tag {
+    margin: auto 0;
+    padding: 4px 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+  .bio-body {
+    font-size: 12pt;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
