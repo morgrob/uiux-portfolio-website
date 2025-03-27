@@ -4647,9 +4647,9 @@ textarea.form-control-lg {
 
 .nav-tabs {
   --bs-nav-tabs-border-width: 1px;
-  --bs-nav-tabs-border-color: rgba(255, 255, 255, 0.04);
+  --bs-nav-tabs-border-color: rgba(255, 255, 255, 0.1) !important;
   --bs-nav-tabs-border-radius: 0.325rem;
-  --bs-nav-tabs-link-hover-border-color: #f0f1f3 #f0f1f3 rgba(255, 255, 255, 0.04);
+  --bs-nav-tabs-link-hover-border-color: #f0f1f3 #f0f1f3 rgba(255, 255, 255, 0.1);
   --bs-nav-tabs-link-active-color: #404448;
   --bs-nav-tabs-link-active-bg: #fff;
   --bs-nav-tabs-link-active-border-color: #dde0e3 #dde0e3 #fff;
