@@ -367,6 +367,12 @@
 h1, h2, h3, h4, h5, h6 {
   color: white !important;
 }
-.navbar, .navbar-dark, .card {
+.navbar, .navbar-dark {
   background-color: #222529 !important;
+}
+.card {
+  background-color: #1c1f22 !important;
+}
+.nav-tabs {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
