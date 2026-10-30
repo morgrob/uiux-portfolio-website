@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 	<title>Luminary</title>
-    <base href="/luminary">
 
 	<!-- Meta Tags -->
 	<meta charset="utf-8">
@@ -11,7 +10,7 @@
 	<meta name="description" content="Eduport- LMS, Education and Course Theme">
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="../assets/images/favicon..png">
+	<link rel="icon" href="../assets/images/favicon.svg?v=2" type="image/svg+xml">
 
 	<!-- Google Font -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,19 +27,21 @@
 	<link rel="stylesheet" type="text/css" href="../assets/vendor/glightbox/css/glightbox.css">
 
 	<!-- Theme CSS -->
-	<link id="style-switch" rel="stylesheet" type="text/css" href="../assets/css/style-dark.css">
+	<link id="style-switch" rel="stylesheet" type="text/css" href="../assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/case-study-v2.css?v=91">
 
 </head>
 
 <body>
 
-    <header class="navbar-dark navbar-sticky header-static">
+    <header class="navbar-light navbar-sticky header-static">
         <!-- Logo Nav START -->
         <nav class="navbar navbar-expand-xl">
             <div class="container-fluid px-3 px-xl-5 d-flex justify-content-center">
                 <!-- Logo START -->
                 <a class="navbar-brand" href="../index.html">
-                    <img class="navbar-brand-item" src="../assets/images/logo-white.svg" alt="logo">
+                    <img class="light-mode-item navbar-brand-item" src="../assets/images/logo-black.svg" alt="logo">
+                    <img class="dark-mode-item navbar-brand-item" src="../assets/images/logo-white.svg" alt="logo">
                 </a>
                 <!-- Logo END -->
     
@@ -88,7 +89,7 @@
     </header>
 
     <!-- <div class="page-container">
-        <a href="index.html#projects"><p style="color: rgb(46,104,194);"><b style="font-size: 22px;">&#x2039;</b> Back</p></a>
+        <a href="../index.html#projects"><p style="color: rgb(46,104,194);"><b style="font-size: 22px;">&#x2039;</b> Back</p></a>
     </div> -->
 
     <div class="container project-container">
@@ -130,8 +131,8 @@
                 </div>
             </div>
 
-            <div class="col landing-cover" style="background-color: #A5CDFB; ">
-                <img class="landing-cover-image" src="../assets/images/luminary-screens.png">
+            <div class="col">
+                <div class="landing-cover-frame"><img class="landing-cover" src="../assets/images/luminary-landing-image.png"></div>
             </div>            
 
         </div>
@@ -181,7 +182,7 @@
                 <br>
             </p>
 
-            <img src="../assets/images/obstacle-chart.png" alt="Bar graph of obstacles faced by students on UNC's campus">
+            <img class="diagram-on-light" src="../assets/images/obstacle-chart.png" alt="Bar graph of obstacles faced by students on UNC's campus">
 
             <p><br><br></p>
             <h3>Defining Features</h3>
@@ -329,42 +330,60 @@
             </table>
 
             <p><br></p>
-            <h3>Information Architecture</h3>
-            <p>
-                At this point, I made the following diagram, which shows Luminary's comprehensive information architecture. This visual representation 
-                maps the logical progression between key screens and features, highlighting how users will navigate through the application to accomplish 
-                their accessibility-focused goals.
-            </p>
-            <img src="../assets/images/info-arc.png">
+            <article class="luminary-media-case" data-media-label="Information Architecture">
+                <div class="luminary-media-copy">
+                    <h3>Information Architecture</h3>
+                    <p>
+                        At this point, I made the following diagram, which shows Luminary's comprehensive information architecture. This visual representation
+                        maps the logical progression between key screens and features, highlighting how users will navigate through the application to accomplish
+                        their accessibility-focused goals.
+                    </p>
+                </div>
+                <div class="luminary-media-content">
+                    <img class="diagram-on-light" src="../assets/images/info-arc.png" alt="Luminary information architecture diagram">
+                </div>
+            </article>
 
-            <h3>Wireframes</h3>
-            <p>
-                When THATT approached App Team Carolina with the Luminary concept, they provided preliminary design mockups to illustrate their vision. 
-                These proof-of-concept designs, displayed below, were my starting point and reference for understanding THATT's core requirements and 
-                expectations for the app. While basic in execution, these initial mockups captured essential functionality and helped establish a shared 
-                understanding of Luminary's purpose before I began the formal design process.
-            </p>
-            <div class="row row-cols-2 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 row-cols-xl-4">
-                <img class="mockup-screen" src="../assets/images/polaris-home.png">
-                <img class="mockup-screen" src="../assets/images/polaris-map.png">
-            </div>
-            <p>
-                <br>
-                With THATT's proof-of-concept as reference, I began translating their vision into more structured design artifacts. I started by 
-                creating hand-drawn sketches to explore different layout options and user flows, allowing for rapid ideation and iteration. 
-                These preliminary sketches evolved into basic wireframes that defined the fundamental structure and information hierarchy of 
-                Luminary's interface. I then presented these wireframes to our cross-functional team of developers and product managers to gather 
-                early feedback on the design direction and validate that the proposed structure would effectively support our technical requirements 
-                and user needs.
-            </p>
-            <div class="luminary-wireframes row row-cols-2 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 row-cols-xl-4">
-                <img class="mockup-screen" src="../assets/images/luminary-wireframe1.png">
-                <img class="mockup-screen" src="../assets/images/luminary-wireframe2.png">
-                <img class="mockup-screen" src="../assets/images/luminary-wireframe3.png">
-                <img class="mockup-screen" src="../assets/images/luminary-wireframe4.png">
-                <img class="mockup-screen" src="../assets/images/luminary-wireframe5.png">
-                <img class="mockup-screen" src="../assets/images/luminary-wireframe6.png">
-            </div>
+            <article class="luminary-media-case" data-media-label="Proof-of-Concept Wireframes">
+                <div class="luminary-media-copy">
+                    <h3>Wireframes</h3>
+                    <p>
+                        When THATT approached App Team Carolina with the Luminary concept, they provided preliminary design mockups to illustrate their vision.
+                        These proof-of-concept designs, displayed below, were my starting point and reference for understanding THATT's core requirements and
+                        expectations for the app. While basic in execution, these initial mockups captured essential functionality and helped establish a shared
+                        understanding of Luminary's purpose before I began the formal design process.
+                    </p>
+                </div>
+                <div class="luminary-media-content">
+                    <div class="row row-cols-2 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 row-cols-xl-4">
+                        <img class="mockup-screen" src="../assets/images/polaris-home.png">
+                        <img class="mockup-screen" src="../assets/images/polaris-map.png">
+                    </div>
+                </div>
+            </article>
+
+            <article class="luminary-media-case" data-media-label="Luminary Wireframes">
+                <div class="luminary-media-copy">
+                    <p>
+                        With THATT's proof-of-concept as reference, I began translating their vision into more structured design artifacts. I started by
+                        creating hand-drawn sketches to explore different layout options and user flows, allowing for rapid ideation and iteration.
+                        These preliminary sketches evolved into basic wireframes that defined the fundamental structure and information hierarchy of
+                        Luminary's interface. I then presented these wireframes to our cross-functional team of developers and product managers to gather
+                        early feedback on the design direction and validate that the proposed structure would effectively support our technical requirements
+                        and user needs.
+                    </p>
+                </div>
+                <div class="luminary-media-content">
+                    <div class="luminary-wireframes row row-cols-2 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 row-cols-xl-4">
+                        <img class="mockup-screen" src="../assets/images/luminary-wireframe1.png">
+                        <img class="mockup-screen" src="../assets/images/luminary-wireframe2.png">
+                        <img class="mockup-screen" src="../assets/images/luminary-wireframe3.png">
+                        <img class="mockup-screen" src="../assets/images/luminary-wireframe4.png">
+                        <img class="mockup-screen" src="../assets/images/luminary-wireframe5.png">
+                        <img class="mockup-screen" src="../assets/images/luminary-wireframe6.png">
+                    </div>
+                </div>
+            </article>
 
             <h3>Branding</h3>
             <p>
@@ -576,15 +595,6 @@
             </p>
         </div>
 
-        <div class="project-section row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-1 row-cols-xl-1">
-            <h2>⏭️ Next Steps</h2>
-            <div class="separator"></div>
-            <p>
-                <br>
-                Our team continues to make progress on Luminary and is preparing to launch to the App Store in April 2025.
-            </p>
-        </div>
-
     </div>
 
 
@@ -613,7 +623,8 @@
 <script src="../assets/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>
 
 <!-- Template Functions -->
-<script src="../assets/js/functions.js"></script>
+<script src="../assets/js/functions.js?v=2"></script>
+<script src="../assets/js/case-study-v2.js?v=31"></script>
 
 </body>
 

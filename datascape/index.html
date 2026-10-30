@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 	<title>Datascape</title>
-    <base href="/datascape">
 
 	<!-- Meta Tags -->
 	<meta charset="utf-8">
@@ -11,7 +10,7 @@
 	<meta name="description" content="Eduport- LMS, Education and Course Theme">
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="../assets/images/favicon..png">
+	<link rel="icon" href="../assets/images/favicon.svg?v=2" type="image/svg+xml">
 
 	<!-- Google Font -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,19 +27,21 @@
 	<link rel="stylesheet" type="text/css" href="../assets/vendor/glightbox/css/glightbox.css">
 
 	<!-- Theme CSS -->
-	<link id="style-switch" rel="stylesheet" type="text/css" href="../assets/css/style-dark.css">
+	<link id="style-switch" rel="stylesheet" type="text/css" href="../assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/case-study-v2.css?v=91">
 
 </head>
 
 <body>
 
-    <header class="navbar-dark navbar-sticky header-static">
+    <header class="navbar-light navbar-sticky header-static">
         <!-- Logo Nav START -->
         <nav class="navbar navbar-expand-xl">
             <div class="container-fluid px-3 px-xl-5 d-flex justify-content-center">
                 <!-- Logo START -->
                 <a class="navbar-brand" href="../index.html">
-                    <img class="navbar-brand-item" src="../assets/images/logo-white.svg" alt="logo">
+                    <img class="light-mode-item navbar-brand-item" src="../assets/images/logo-black.svg" alt="logo">
+                    <img class="dark-mode-item navbar-brand-item" src="../assets/images/logo-white.svg" alt="logo">
                 </a>
                 <!-- Logo END -->
     
@@ -88,7 +89,7 @@
     </header>
 
     <!-- <div class="page-container">
-        <a href="index.html#projects"><p style="color: rgb(46,104,194);"><b style="font-size: 22px;">&#x2039;</b> Back</p></a>
+        <a href="../index.html#projects"><p style="color: rgb(46,104,194);"><b style="font-size: 22px;">&#x2039;</b> Back</p></a>
     </div> -->
 
     <div class="container project-container">
@@ -130,8 +131,8 @@
                 </div>
             </div>
 
-            <div class="col landing-cover" style="background-color: #406680;">
-                <img class="landing-cover-image" src="../assets/images/datascape-screens.png">
+            <div class="col">
+                <div class="landing-cover-frame"><img class="landing-cover" src="../assets/images/datascape-landing.png"></div>
             </div>            
 
         </div>
@@ -303,18 +304,32 @@
                 progression of steps a data analyst would follow when using the tool, highlighting how Datascape simplifies what was previously a 
                 fragmented workflow.
             </p>
-            <img src="../assets/images/datascape-user-flow.png">
+            <img class="diagram-on-light" src="../assets/images/datascape-user-flow.png" alt="Datascape user flow diagram">
             <p><br></p>
 
             <h3>Planning Sketches</h3>
             <p>
-                Following our established objectives, I began the design process with initial sketches that mapped out the conceptual flow 
-                of Datascape's pipeline creation experience, focusing on the logical progression between stages and how users would navigate 
+                Following our established objectives, I began the design process with initial sketches that mapped out the conceptual flow
+                of Datascape's pipeline creation experience, focusing on the logical progression between stages and how users would navigate
                 from natural language inputs through to finalized, testable code.
             </p>
-            <div class="sketches row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-2">
-                <img class="sketch" src="../assets/images/datascape-sketch-1.png">
-                <img class="sketch" src="../assets/images/datascape-sketch-2.png">
+            <div class="sketches planning-sketch-grid" data-carousel="false">
+                <figure class="planning-sketch-item">
+                    <a class="planning-sketch-link" href="../assets/images/datascape-sketch-1.png" data-glightbox data-gallery="datascape-planning-sketches" aria-label="Expand the first Datascape planning sketch">
+                        <img class="sketch" src="../assets/images/datascape-sketch-1.png" alt="First Datascape planning sketch">
+                        <span class="planning-sketch-expand" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </span>
+                    </a>
+                </figure>
+                <figure class="planning-sketch-item">
+                    <a class="planning-sketch-link" href="../assets/images/datascape-sketch-2.png" data-glightbox data-gallery="datascape-planning-sketches" aria-label="Expand the second Datascape planning sketch">
+                        <img class="sketch" src="../assets/images/datascape-sketch-2.png" alt="Second Datascape planning sketch">
+                        <span class="planning-sketch-expand" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </span>
+                    </a>
+                </figure>
             </div>
 
         </div>
@@ -374,38 +389,46 @@
                 Our testing revealed several critical insights that challenged some of our initial assumptions while validating others:
             </p>
 
-            <h5>Technical Preferences</h5>
-            <p>
-                Most data workers expressed a preference for directly editing code rather than using the low-code editor, as participants 
-                demonstrated high comfort levels with writing their own code. However, they still valued the low-code view as a visualization 
-                tool to conceptualize their pipeline structure.
-            </p>
-
-            <h5>Role-Based Considerations</h5>
-            <p>
-                The testing suggested that our low-code interface might provide more value to adjacent roles (Product Managers, 
-                Marketing Managers) who prefer to avoid technical complexity. This insight prompted us to consider how Datascape 
-                might serve as a bridge between technical and non-technical stakeholders.
-            </p>
-
-            <h5>AI Integration Perceptions</h5>
-            <p>
-                Data analysts showed interest in using GenAI capabilities as a starting point for their work, but most expressed 
-                healthy skepticism toward AI-generated content, noting they would still verify and modify any AI-generated code.
-                This validated our approach of positioning AI as an assistant rather than a replacement.
-            </p>
-
-            <h5>Tool Transition Concerns</h5>
-            <p>
-                Users expressed hesitation about the cost (time and effort) of transitioning from their current workflows to a new tool, 
-                which highlighted the importance of demonstrating clear value and providing a seamless process of migration. 
-            </p>
-
-            <h5>Feature Validation</h5>
-            <p>
-                The ability to author, test, and work iteratively within a single tool generated significant excitement, and 
-                participants particularly appreciated how Datascape handled tedious aspects like processor and pipeline setup.
-            </p>
+            <ul class="overall-findings-list">
+                <li>
+                    <h5>Technical Preferences</h5>
+                    <p>
+                        Most data workers expressed a preference for directly editing code rather than using the low-code editor, as participants
+                        demonstrated high comfort levels with writing their own code. However, they still valued the low-code view as a visualization
+                        tool to conceptualize their pipeline structure.
+                    </p>
+                </li>
+                <li>
+                    <h5>Role-Based Considerations</h5>
+                    <p>
+                        The testing suggested that our low-code interface might provide more value to adjacent roles (Product Managers,
+                        Marketing Managers) who prefer to avoid technical complexity. This insight prompted us to consider how Datascape
+                        might serve as a bridge between technical and non-technical stakeholders.
+                    </p>
+                </li>
+                <li>
+                    <h5>AI Integration Perceptions</h5>
+                    <p>
+                        Data analysts showed interest in using GenAI capabilities as a starting point for their work, but most expressed
+                        healthy skepticism toward AI-generated content, noting they would still verify and modify any AI-generated code.
+                        This validated our approach of positioning AI as an assistant rather than a replacement.
+                    </p>
+                </li>
+                <li>
+                    <h5>Tool Transition Concerns</h5>
+                    <p>
+                        Users expressed hesitation about the cost (time and effort) of transitioning from their current workflows to a new tool,
+                        which highlighted the importance of demonstrating clear value and providing a seamless process of migration.
+                    </p>
+                </li>
+                <li>
+                    <h5>Feature Validation</h5>
+                    <p>
+                        The ability to author, test, and work iteratively within a single tool generated significant excitement, and
+                        participants particularly appreciated how Datascape handled tedious aspects like processor and pipeline setup.
+                    </p>
+                </li>
+            </ul>
 
             <h3>Onboarding A/B Testing</h3>
             <p>
@@ -442,7 +465,7 @@
 
         </div>
 
-        <div class="project-section row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-1 row-cols-xl-1">
+        <div class="project-section datascape-impact-section row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-1 row-cols-xl-1">
             <h2>🌎 Impact & Outcome</h2>
             <div class="separator"></div>
             <p>
@@ -459,7 +482,7 @@
                                 <p>"Because I've been burned a few times by GenAI, I'm a bit wary with GenAI code."</p>
                             </blockquote>
                             <p class="image-subtitle">
-                                This feedback from a Product Analyst further verified our approach of positioning AI as an assistant 
+                                This feedback from a Product Analyst further verifier our approach of positioning AI as an assistant
                                 rather than a replacement in the workflow.
                             </p>
                         </div>
@@ -524,7 +547,8 @@
 <script src="../assets/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>
 
 <!-- Template Functions -->
-<script src="../assets/js/functions.js"></script>
+<script src="../assets/js/functions.js?v=2"></script>
+<script src="../assets/js/case-study-v2.js?v=31"></script>
 
 </body>
 

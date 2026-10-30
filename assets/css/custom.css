@@ -291,11 +291,7 @@
     border-radius: 15px;
     height: 85vh;
     width: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
-
   .landing-logo {
     border-radius: 15px;
     width: 100px;
@@ -368,15 +364,3 @@
     font-size: 12pt;
     color: rgba(255, 255, 255, 0.8);
   }
-h1, h2, h3, h4, h5, h6 {
-  color: white !important;
-}
-.navbar, .navbar-dark {
-  background-color: #222529 !important;
-}
-.card {
-  background-color: #1c1f22 !important;
-}
-.nav-tabs {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}

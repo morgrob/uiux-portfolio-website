@@ -989,13 +989,14 @@ var e = {
         let theme = localStorage.getItem('data-theme');
         var style = document.getElementById("style-switch");
         var dir = document.getElementsByTagName("html")[0].getAttribute('dir');
+        var styleRoot = style ? new URL('.', style.href).href : 'assets/css/';
 
         var changeThemeToDark = () => {
           document.documentElement.setAttribute("data-theme", "dark") // set theme to dark
           if(dir == 'rtl') {
-              style.setAttribute('href', 'assets/css/style-dark-rtl.css');
+              style.setAttribute('href', styleRoot + 'style-dark-rtl.css');
           } else {
-              style.setAttribute('href', 'assets/css/style-dark.css');
+              style.setAttribute('href', styleRoot + 'style-dark.css');
           }
           localStorage.setItem("data-theme", "dark") // save theme to local storage
         }
@@ -1003,9 +1004,9 @@ var e = {
         var changeThemeToLight = () => {
           document.documentElement.setAttribute("data-theme", "light") // set theme light
           if(dir == 'rtl') {
-              style.setAttribute('href', 'assets/css/style-rtl.css');
+              style.setAttribute('href', styleRoot + 'style-rtl.css');
           } else {
-              style.setAttribute('href', 'assets/css/style.css');
+              style.setAttribute('href', styleRoot + 'style.css');
           }
           
           localStorage.setItem("data-theme", 'light') // save theme to local storage

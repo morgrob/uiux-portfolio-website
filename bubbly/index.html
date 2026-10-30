@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 	<title>Bubbly: CVI Literacy</title>
-    <base href="/bubbly">
 
 	<!-- Meta Tags -->
 	<meta charset="utf-8">
@@ -11,7 +10,7 @@
 	<meta name="description" content="Eduport- LMS, Education and Course Theme">
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="../assets/images/favicon..png">
+	<link rel="icon" href="../assets/images/favicon.svg?v=2" type="image/svg+xml">
 
 	<!-- Google Font -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,19 +27,21 @@
 	<link rel="stylesheet" type="text/css" href="../assets/vendor/glightbox/css/glightbox.css">
 
 	<!-- Theme CSS -->
-	<link id="style-switch" rel="stylesheet" type="text/css" href="../assets/css/style-dark.css">
+	<link id="style-switch" rel="stylesheet" type="text/css" href="../assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/case-study-v2.css?v=91">
 
 </head>
 
 <body>
 
-    <header class="navbar-dark navbar-sticky header-static">
+    <header class="navbar-light navbar-sticky header-static">
         <!-- Logo Nav START -->
         <nav class="navbar navbar-expand-xl">
             <div class="container-fluid px-3 px-xl-5 d-flex justify-content-center">
                 <!-- Logo START -->
                 <a class="navbar-brand" href="../index.html">
-                    <img class="navbar-brand-item" src="../assets/images/logo-white.svg" alt="logo">
+                    <img class="light-mode-item navbar-brand-item" src="../assets/images/logo-black.svg" alt="logo">
+                    <img class="dark-mode-item navbar-brand-item" src="../assets/images/logo-white.svg" alt="logo">
                 </a>
                 <!-- Logo END -->
     
@@ -88,7 +89,7 @@
     </header>
 
     <!-- <div class="page-container">
-        <a href="index.html#projects"><p style="color: rgb(46,104,194);"><b style="font-size: 22px;">&#x2039;</b> Back</p></a>
+        <a href="../index.html#projects"><p style="color: rgb(46,104,194);"><b style="font-size: 22px;">&#x2039;</b> Back</p></a>
     </div> -->
 
     <div class="container project-container">
@@ -131,8 +132,8 @@
                 </div>
             </div>
 
-            <div class="col landing-cover" style="background-color: #0C61BF;">
-                <img class="landing-cover-image" src="../assets/images/bubbly-screens.png">
+            <div class="col">
+                <div class="landing-cover-frame"><img class="landing-cover" src="../assets/images/bubbly-landing.png"></div>
             </div>            
 
         </div>
@@ -382,7 +383,7 @@
                 flow highlights key decision points and interaction opportunities, ensuring the interface would accommodate the unique needs 
                 of children with CVI while providing guardians with necessary customization options.
             </p>
-            <img src="../assets/images/bubbly-user-flow.png">
+            <img class="diagram-on-light" src="../assets/images/bubbly-user-flow.png" alt="Bubbly user flow diagram">
 
             <h3>Wireframes</h3>
             <p>
@@ -536,7 +537,8 @@
 <script src="../assets/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>
 
 <!-- Template Functions -->
-<script src="../assets/js/functions.js"></script>
+<script src="../assets/js/functions.js?v=2"></script>
+<script src="../assets/js/case-study-v2.js?v=31"></script>
 
 </body>
 
