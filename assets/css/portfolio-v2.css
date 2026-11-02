@@ -33,6 +33,7 @@
   --label: "Arinoe Local", Impact, sans-serif;
   --body: "Open Sans Local", "Open Sans", Arial, sans-serif;
   --shell: 1200px;
+  --home-shell: 1240px;
   --gutter: clamp(16px, 3.125vw, 40px);
   --section-spacing: 100px;
 }
@@ -75,6 +76,7 @@ a { color: inherit; }
 }
 .skip-link:focus { transform: translateY(0); }
 .page-shell { width: min(var(--shell), calc(100% - (2 * var(--gutter)))); margin-inline: auto; }
+.home-page .page-shell { width: min(var(--home-shell), calc(100% - (2 * var(--gutter)))); }
 
 /* Shared navigation */
 .site-nav {
@@ -284,13 +286,6 @@ a { color: inherit; }
 
 /* Shared content headings */
 .content-section { background: var(--white); }
-@media (min-width: 901px) {
-  .work-section .page-shell,
-  .experience-section .page-shell,
-  .powers-section .page-shell {
-    width: min(calc(var(--shell) + 40px), calc(100% - 40px));
-  }
-}
 .work-section { padding: var(--section-spacing) 0 120px; }
 .section-heading {
   --section-title-top: 25.635px;
@@ -452,7 +447,7 @@ a { color: inherit; }
 .about-section,
 .about-hero,
 .powers-section { --about-copy-line-height: 1.4; --about-heading-line-height: 1.2; }
-.about-hero { --about-content-edge: max(20px, calc((100vw - 1240px) / 2)); position: relative; height: 912px; min-height: 912px; overflow: hidden; background: var(--white); }
+.about-hero { --about-content-edge: max(var(--gutter), calc((100vw - var(--home-shell)) / 2)); position: relative; height: 912px; min-height: 912px; overflow: hidden; background: var(--white); }
 .about-hero .site-nav { position: relative; }
 .wave--about { position: absolute; z-index: 1; top: 0; left: -1px; width: calc(100vw + 2px); height: 100%; max-width: none; margin-left: 0; }
 .about-portrait {
@@ -779,7 +774,7 @@ a { color: inherit; }
     grid-template-rows: auto auto auto;
     row-gap: 28px;
     overflow: visible;
-    padding: 46px 20px 32px;
+    padding: 46px var(--gutter) 32px;
   }
   .wave--about,
   .about-greeting { display: none; }
