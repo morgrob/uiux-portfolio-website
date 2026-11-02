@@ -580,7 +580,15 @@ a { color: inherit; }
   .nav-links a { color: var(--black); font-size: 30px; }
   .home-hero { height: 100vh; height: 100svh; min-height: 455px; }
   .home-hero__figma-title { display: none; }
-  .home-hero__title-wrap { display: block; margin-top: 82px; }
+  .home-hero__title-wrap {
+    position: absolute;
+    top: 49%;
+    left: 50%;
+    display: block;
+    width: 96vw;
+    margin: 0;
+    transform: translate(-50%, -50%);
+  }
   .home-hero__title { font-size: clamp(46px, 10vw, 86px); }
   .home-hero__title-wrap p { width: 96vw; font-size: clamp(14px, 2.6vw, 21px); }
   .wave--hero { display: none; }
@@ -686,14 +694,6 @@ a { color: inherit; }
 @media (max-width: 580px) {
   :root { --gutter: 8px; --section-spacing: 64px; }
   .home-hero { height: 100vh; height: 100svh; min-height: 370px; }
-  .home-hero__title-wrap {
-    position: absolute;
-    top: 49%;
-    left: 50%;
-    width: 96vw;
-    margin: 0;
-    transform: translate(-50%, -50%);
-  }
   .home-hero__title {
     font-size: clamp(42px, 15vw, 63px);
     letter-spacing: -.06em;
