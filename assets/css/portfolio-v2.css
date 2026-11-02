@@ -520,6 +520,35 @@ a { color: inherit; }
 .about-gallery img:nth-child(5) { grid-row: 1; grid-column: 4; }
 .about-gallery img:nth-child(6) { grid-row: 2; grid-column: 4; }
 .about-gallery img:nth-child(7) { grid-row: 1 / span 2; grid-column: 5; }
+.about-gallery.about-gallery--marquee {
+  display: flex;
+  height: auto;
+  flex-direction: column;
+  gap: 8px;
+  overflow: hidden;
+  padding: 0;
+}
+.about-gallery-row { width: 100%; overflow: hidden; }
+.about-gallery-track {
+  display: flex;
+  gap: 8px;
+  width: max-content;
+  animation: about-gallery-loop 44s linear infinite;
+  will-change: transform;
+}
+.about-gallery-row:nth-child(2) .about-gallery-track {
+  animation-direction: reverse;
+  animation-duration: 42s;
+}
+.about-gallery.about-gallery--marquee img {
+  width: clamp(150px, 18vw, 230px);
+  height: auto;
+  flex: 0 0 clamp(150px, 18vw, 230px);
+  aspect-ratio: 1;
+  border-radius: 17px;
+  object-fit: cover;
+  transition: none;
+}
 
 @keyframes about-gallery-loop {
   to { transform: translateX(calc(-50% - 4px)); }
@@ -805,28 +834,8 @@ a { color: inherit; }
   .powers-section .section-heading { margin-bottom: 10px; }
   .powers-grid { grid-template-columns: 1fr; gap: 30px; padding: 0 2px; }
   .powers-grid p { font-size: 15px; }
-  .about-gallery.about-gallery--mobile-marquee {
-    display: flex;
-    height: auto;
-    flex-direction: column;
-    gap: 8px;
-    overflow: hidden;
-    margin-top: 84px;
-    padding: 0;
-  }
-  .about-gallery-row { width: 100%; overflow: hidden; }
-  .about-gallery-track {
-    display: flex;
-    gap: 8px;
-    width: max-content;
-    animation: about-gallery-loop 44s linear infinite;
-    will-change: transform;
-  }
-  .about-gallery-row:nth-child(2) .about-gallery-track {
-    animation-direction: reverse;
-    animation-duration: 42s;
-  }
-  .about-gallery.about-gallery--mobile-marquee img {
+  .about-gallery.about-gallery--marquee { margin-top: 84px; }
+  .about-gallery.about-gallery--marquee img {
     width: clamp(104px, 31vw, 136px);
     height: auto;
     flex: 0 0 clamp(104px, 31vw, 136px);

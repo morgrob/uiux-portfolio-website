@@ -222,24 +222,10 @@ if (projectsNavLink && projectsTitle) {
 const aboutGallery = document.querySelector('[data-about-gallery]');
 
 if (aboutGallery) {
-  const initialGalleryMarkup = aboutGallery.innerHTML;
-  let gallerySlots = Array.from(aboutGallery.querySelectorAll('img'));
   const galleryPhotos = Array.from({ length: 37 }, (_, index) => {
     const number = String(index + 1).padStart(2, '0');
     return `assets/images/portfolio-v2/about-gallery/photo-${number}.jpg?v=2`;
   });
-  const portraitSlotIndexes = new Set([0, 3, 6]);
-  const photoPools = { landscape: [], portrait: [] };
-  const photoDecks = { landscape: [], portrait: [] };
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const mobileGalleryQuery = window.matchMedia('(max-width: 580px)');
-  let nextSlotIndex = 0;
-  let galleryTimer;
-  let galleryReady = false;
-  let isSwapping = false;
-  let galleryMode;
-
-  const getSlotOrientation = index => portraitSlotIndexes.has(index) ? 'portrait' : 'landscape';
 
   const shufflePhotos = photos => {
     const shuffled = [...photos];
@@ -250,59 +236,7 @@ if (aboutGallery) {
     return shuffled;
   };
 
-  const refillPhotoDeck = orientation => {
-    const visiblePhotos = new Set(gallerySlots
-      .filter((slot, index) => getSlotOrientation(index) === orientation)
-      .map(slot => slot.getAttribute('src')));
-
-    photoDecks[orientation] = shufflePhotos(
-      photoPools[orientation].filter(photo => !visiblePhotos.has(photo))
-    );
-  };
-
-  const getNextPhoto = orientation => {
-    if (!photoDecks[orientation].length) refillPhotoDeck(orientation);
-    return photoDecks[orientation].shift();
-  };
-
-  const swapGalleryPhoto = () => {
-    if (!galleryReady || galleryMode !== 'desktop' || isSwapping || document.hidden) return;
-
-    isSwapping = true;
-    const slot = gallerySlots[nextSlotIndex];
-    const orientation = getSlotOrientation(nextSlotIndex);
-    const nextPhoto = getNextPhoto(orientation);
-    const preloader = new Image();
-
-    preloader.addEventListener('load', () => {
-      slot.classList.add('is-changing');
-      window.setTimeout(() => {
-        slot.src = nextPhoto;
-        slot.classList.remove('is-changing');
-        nextSlotIndex = (nextSlotIndex + 1) % gallerySlots.length;
-        isSwapping = false;
-      }, 240);
-    }, { once: true });
-
-    preloader.addEventListener('error', () => {
-      isSwapping = false;
-    }, { once: true });
-
-    preloader.src = nextPhoto;
-  };
-
-  const startGallery = () => {
-    if (galleryReady && galleryMode === 'desktop' && !galleryTimer && !reduceMotion.matches) {
-      galleryTimer = window.setInterval(swapGalleryPhoto, 2200);
-    }
-  };
-
-  const stopGallery = () => {
-    window.clearInterval(galleryTimer);
-    galleryTimer = undefined;
-  };
-
-  const createMobileGalleryRow = photos => {
+  const createGalleryRow = photos => {
     const row = document.createElement('div');
     const track = document.createElement('div');
     row.className = 'about-gallery-row';
@@ -322,59 +256,21 @@ if (aboutGallery) {
     return row;
   };
 
-  const showMobileGallery = () => {
-    if (galleryMode === 'mobile') return;
-    stopGallery();
-
-    const orderedPhotos = shufflePhotos([...photoPools.portrait, ...photoPools.landscape]);
+  const showScrollingGallery = photos => {
+    const orderedPhotos = shufflePhotos(photos);
     const rows = [
       orderedPhotos.filter((_, index) => index % 2 === 0),
       orderedPhotos.filter((_, index) => index % 2 === 1)
     ];
 
-    aboutGallery.classList.add('about-gallery--mobile-marquee');
-    aboutGallery.replaceChildren(...rows.map(createMobileGalleryRow));
-    galleryMode = 'mobile';
-  };
-
-  const showDesktopGallery = () => {
-    if (galleryMode !== 'desktop') {
-      aboutGallery.classList.remove('about-gallery--mobile-marquee');
-      aboutGallery.innerHTML = initialGalleryMarkup;
-      gallerySlots = Array.from(aboutGallery.querySelectorAll('img'));
-      nextSlotIndex = 0;
-    }
-
-    galleryMode = 'desktop';
-    refillPhotoDeck('portrait');
-    refillPhotoDeck('landscape');
-    startGallery();
-  };
-
-  const updateGalleryMode = () => {
-    if (!galleryReady) return;
-    if (mobileGalleryQuery.matches) showMobileGallery();
-    else showDesktopGallery();
+    aboutGallery.classList.add('about-gallery--marquee');
+    aboutGallery.replaceChildren(...rows.map(createGalleryRow));
   };
 
   Promise.all(galleryPhotos.map(photo => new Promise(resolve => {
-    const classifier = new Image();
-    classifier.addEventListener('load', () => {
-      const orientation = classifier.naturalHeight > classifier.naturalWidth ? 'portrait' : 'landscape';
-      resolve({ orientation, photo });
-    }, { once: true });
-    classifier.addEventListener('error', () => resolve(null), { once: true });
-    classifier.src = photo;
-  }))).then(classifiedPhotos => {
-    classifiedPhotos.filter(Boolean).forEach(({ orientation, photo }) => photoPools[orientation].push(photo));
-    galleryReady = photoPools.portrait.length > 0 && photoPools.landscape.length > 0;
-    updateGalleryMode();
-  });
-
-  mobileGalleryQuery.addEventListener('change', updateGalleryMode);
-
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) stopGallery();
-    else if (galleryMode === 'desktop') startGallery();
-  });
+    const preloader = new Image();
+    preloader.addEventListener('load', () => resolve(photo), { once: true });
+    preloader.addEventListener('error', () => resolve(null), { once: true });
+    preloader.src = photo;
+  }))).then(loadedPhotos => showScrollingGallery(loadedPhotos.filter(Boolean)));
 }
