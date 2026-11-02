@@ -629,6 +629,7 @@ a { color: inherit; }
 @media (max-width: 900px) {
   :root { --section-spacing: 80px; }
   .about-hero { --about-content-edge: var(--gutter); }
+  .portrait-burst { display: none; }
   .site-nav { padding: 20px var(--gutter); }
   .brand img { width: 49px; height: auto; }
   .menu-toggle {
