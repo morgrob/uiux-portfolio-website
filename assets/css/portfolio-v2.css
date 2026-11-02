@@ -134,9 +134,9 @@ a { color: inherit; }
 .hero-subheadline-curve {
   position: absolute;
   left: 50%;
-  width: 1291px;
+  width: 96vw;
   height: 491px;
-  margin-left: -645.5px;
+  margin-left: -48vw;
   overflow: visible;
 }
 .hero-name-curve { top: 401px; }
@@ -176,6 +176,8 @@ a { color: inherit; }
   z-index: 4;
   align-items: center;
   justify-content: center;
+  width: 96vw;
+  max-width: 96vw;
   margin: 0;
   font-family: var(--display);
   font-size: clamp(68px, 9vw, 122px);
@@ -192,6 +194,8 @@ a { color: inherit; }
   transform: translateY(.03em);
 }
 .home-hero__title-wrap p {
+  width: 96vw;
+  max-width: 96vw;
   margin: 18px auto 0;
   font-family: var(--label);
   font-size: clamp(17px, 2.1vw, 28px);
@@ -528,17 +532,6 @@ a { color: inherit; }
 .site-footer p span { color: #ed1c24; }
 .site-footer--about { height: 207px; margin-top: 91px; }
 
-/* Keep the decorative curves full-bleed on viewports wider than the Figma frame. */
-@media (min-width: 1292px) {
-  .hero-name-curve,
-  .hero-subheadline-curve {
-    left: 0;
-    width: 100%;
-    height: 491px;
-    margin-left: 0;
-  }
-}
-
 @media (max-width: 900px) {
   :root { --section-spacing: 80px; }
   .about-hero { --about-content-edge: var(--gutter); }
@@ -589,7 +582,7 @@ a { color: inherit; }
   .home-hero__figma-title { display: none; }
   .home-hero__title-wrap { display: block; margin-top: 82px; }
   .home-hero__title { font-size: clamp(46px, 10vw, 86px); }
-  .home-hero__title-wrap p { width: 90%; font-size: clamp(14px, 2.6vw, 21px); }
+  .home-hero__title-wrap p { width: 96vw; font-size: clamp(14px, 2.6vw, 21px); }
   .wave--hero { top: auto; bottom: 0; transform: scale(.72, .56); transform-origin: bottom center; }
   .hero-scroll-indicator { bottom: 74px; gap: 16px; font-size: 22px; }
   .hero-scroll-indicator::before {
@@ -667,7 +660,7 @@ a { color: inherit; }
     position: absolute;
     top: 49%;
     left: 50%;
-    width: calc(100% - 20px);
+    width: 96vw;
     margin: 0;
     transform: translate(-50%, -50%);
   }
@@ -676,7 +669,7 @@ a { color: inherit; }
     letter-spacing: -.06em;
     text-transform: uppercase;
   }
-  .home-hero__title-wrap p { width: 96%; margin-top: 24px; font-size: 24px; line-height: 1.4; }
+  .home-hero__title-wrap p { width: 96vw; margin-top: 24px; font-size: 24px; line-height: 1.4; }
   .hero-motion-active .home-hero__title {
     animation-name: hero-name-mobile-straight-enter;
   }
