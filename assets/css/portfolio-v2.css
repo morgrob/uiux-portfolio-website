@@ -792,6 +792,7 @@ a { color: inherit; }
     top: auto;
     left: auto;
     width: 100%;
+    max-width: none;
     height: auto;
     aspect-ratio: 3 / 2;
     grid-column: 1;
