@@ -290,7 +290,7 @@ body {
 .project-section > h2::after {
   content: "";
   position: absolute;
-  top: 33.135px;
+  top: 34.135px;
   right: -1px;
   bottom: auto;
   width: 94.27px;
@@ -1091,7 +1091,7 @@ body.case-carousel-overlay-open { overflow: hidden; }
   }
   .project-section > h2::before { right: 25px; height: 2px; }
   .project-section > h2::after {
-    top: 21px;
+    top: 22px;
     right: 0;
     width: 94.27px;
     height: 94.27px;

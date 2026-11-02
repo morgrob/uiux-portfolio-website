@@ -322,7 +322,7 @@ a { color: inherit; }
 }
 .section-star {
   position: absolute;
-  top: 33.135px;
+  top: 34.135px;
   right: 0;
   max-width: none;
 }
@@ -757,7 +757,7 @@ a { color: inherit; }
   }
   .section-heading::after { right: 25px; height: 2px; }
   .section-heading h2 { left: 2px; }
-  .section-star { top: 24px; transform: scale(.53); transform-origin: top right; }
+  .section-star { top: 25px; transform: scale(.53); transform-origin: top right; }
   .project-visual { border-radius: 14px; }
   .project-card::before { border-radius: 14px; }
   .project-card--wide::before,
