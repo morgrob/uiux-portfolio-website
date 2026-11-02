@@ -814,7 +814,14 @@ a { color: inherit; }
     font-size: 48px;
     line-height: .9;
   }
-  .about-mobile-intro p { display: block; margin: 0; font-size: 19px; line-height: 1.18; }
+  .about-mobile-intro p {
+    display: block;
+    margin: 0;
+    font-size: clamp(16px, 5.7vw, 24px) !important;
+    line-height: 1.18;
+    white-space: nowrap;
+  }
+  .about-mobile-intro p br { display: none; }
   .about-summary {
     position: relative;
     top: auto;
