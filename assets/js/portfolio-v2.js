@@ -27,6 +27,7 @@ if (aboutGreeting && aboutBand && howdyPath) {
     aboutSummary?.style.removeProperty('top');
     bioPortrait?.style.removeProperty('top');
     bioPortraitBurst?.style.removeProperty('top');
+    bioPortraitBurst?.style.removeProperty('left');
   };
 
   const getBandPointAtX = (path, pathLength, targetX) => {
@@ -91,13 +92,16 @@ if (aboutGreeting && aboutBand && howdyPath) {
     if (!aboutGreetingText || !bioPortrait || !bioPortraitBurst) return;
 
     const greetingTextBounds = aboutGreetingText.getBoundingClientRect();
+    const portraitBounds = bioPortrait.getBoundingClientRect();
     const burstBounds = bioPortraitBurst.getBoundingClientRect();
     const bandBounds = aboutBand.getBoundingClientRect();
     const portraitTop = greetingTextBounds.top - bandBounds.top + 20;
-    const burstTop = portraitTop - (burstBounds.height / 2) + 3.5;
+    const burstTop = portraitTop - (burstBounds.height / 2);
+    const burstLeft = portraitBounds.right - bandBounds.left - (burstBounds.width / 2);
 
     bioPortrait.style.top = `${portraitTop.toFixed(2)}px`;
     bioPortraitBurst.style.top = `${burstTop.toFixed(2)}px`;
+    bioPortraitBurst.style.left = `${burstLeft.toFixed(2)}px`;
   };
 
   const alignAboutContentWithBand = () => {
