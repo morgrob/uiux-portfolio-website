@@ -21,6 +21,13 @@ if (aboutGreeting && aboutBand && howdyPath) {
   const bandBottomPath = document.createElementNS(svgNamespace, 'path');
   bandBottomPath.setAttribute('d', 'M0 831C106 831 163 754 335 758C528 762 641 877 856 874C1070 871 1124 765 1291 765');
   const bandBottomPathLength = bandBottomPath.getTotalLength();
+  const isCurvedAboutLayout = () => window.getComputedStyle(aboutBand).display !== 'none';
+
+  const clearAboutInlinePositioning = () => {
+    aboutSummary?.style.removeProperty('top');
+    bioPortrait?.style.removeProperty('top');
+    bioPortraitBurst?.style.removeProperty('top');
+  };
 
   const getBandPointAtX = (path, pathLength, targetX) => {
     let low = 0;
@@ -62,11 +69,6 @@ if (aboutGreeting && aboutBand && howdyPath) {
   const centerBioWithinBand = () => {
     if (!aboutSummary) return;
 
-    if (window.innerWidth <= 580) {
-      aboutSummary.style.removeProperty('top');
-      return;
-    }
-
     const summaryBounds = aboutSummary.getBoundingClientRect();
     const bandBounds = aboutBand.getBoundingClientRect();
     if (!summaryBounds.width || !summaryBounds.height || !bandBounds.width || !bandBounds.height) return;
@@ -88,12 +90,6 @@ if (aboutGreeting && aboutBand && howdyPath) {
   const alignPortraitWithGreeting = () => {
     if (!aboutGreetingText || !bioPortrait || !bioPortraitBurst) return;
 
-    if (window.innerWidth <= 900) {
-      bioPortrait.style.removeProperty('top');
-      bioPortraitBurst.style.removeProperty('top');
-      return;
-    }
-
     const greetingTextBounds = aboutGreetingText.getBoundingClientRect();
     const burstBounds = bioPortraitBurst.getBoundingClientRect();
     const bandBounds = aboutBand.getBoundingClientRect();
@@ -105,6 +101,11 @@ if (aboutGreeting && aboutBand && howdyPath) {
   };
 
   const alignAboutContentWithBand = () => {
+    if (!isCurvedAboutLayout()) {
+      clearAboutInlinePositioning();
+      return;
+    }
+
     alignHowdyWithBand();
     centerBioWithinBand();
     alignPortraitWithGreeting();

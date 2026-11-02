@@ -609,7 +609,7 @@ a { color: inherit; }
   .about-mobile-intro p { display: none; }
   .about-summary {
     position: relative;
-    top: auto;
+    top: auto !important;
     left: auto;
     width: min(720px, 100%);
     grid-column: 1;
