@@ -558,14 +558,13 @@ a { color: inherit; }
 
 @media (max-width: 1240px) {
   .about-hero {
-    --about-tablet-portrait-size: min(52vw, 441px);
     display: grid;
     height: auto;
     min-height: 0;
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: auto auto auto;
+    grid-template-columns: minmax(180px, .78fr) minmax(0, 1.22fr);
+    grid-template-rows: auto;
     align-items: start;
-    row-gap: 18px;
+    column-gap: clamp(32px, 5vw, 64px);
     overflow: visible;
     padding: 72px var(--gutter) 60px;
   }
@@ -575,24 +574,32 @@ a { color: inherit; }
     position: relative;
     top: auto;
     left: auto;
-    width: var(--about-tablet-portrait-size);
-    height: var(--about-tablet-portrait-size);
+    width: 100%;
+    max-width: 441px;
+    height: auto;
+    aspect-ratio: 2 / 3;
     grid-column: 1;
     grid-row: 1;
-    justify-self: center;
+    justify-self: stretch;
   }
   .portrait-burst {
-    top: 22px;
-    left: calc(50% + min(26vw, 220.5px) - 50px);
+    position: relative;
+    top: auto;
+    left: auto;
     width: 100px;
     height: 100px;
+    grid-column: 1;
+    grid-row: 1;
+    align-self: start;
+    justify-self: end;
+    transform: translate(50%, -50%);
   }
   .about-mobile-intro {
     display: block;
-    width: min(720px, 100%);
-    grid-column: 1;
-    grid-row: 2;
-    justify-self: center;
+    width: 100%;
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: stretch;
     color: var(--black);
   }
   .about-mobile-intro strong {
@@ -606,10 +613,11 @@ a { color: inherit; }
     position: relative;
     top: auto !important;
     left: auto;
-    width: min(720px, 100%);
-    grid-column: 1;
-    grid-row: 3;
-    justify-self: center;
+    width: 100%;
+    margin-top: clamp(86px, 10vw, 112px);
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: stretch;
   }
   .about-summary h1,
   .about-summary h2,
@@ -791,7 +799,14 @@ a { color: inherit; }
     border-width: 4px;
     border-radius: 9px;
   }
-  .portrait-burst { top: 10px; left: calc(100% - 56px); width: 72px; height: 72px; }
+  .portrait-burst {
+    position: absolute;
+    top: 10px;
+    left: calc(100% - 56px);
+    width: 72px;
+    height: 72px;
+    transform: none;
+  }
   .about-mobile-intro {
     display: block;
     width: 100%;
@@ -822,6 +837,7 @@ a { color: inherit; }
     top: auto;
     left: auto;
     width: auto;
+    margin-top: 0;
     grid-column: 1 / -1;
     grid-row: 3;
   }
