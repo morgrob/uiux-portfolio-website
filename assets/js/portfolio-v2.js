@@ -224,7 +224,7 @@ const aboutGallery = document.querySelector('[data-about-gallery]');
 if (aboutGallery) {
   const galleryPhotos = Array.from({ length: 37 }, (_, index) => {
     const number = String(index + 1).padStart(2, '0');
-    return `assets/images/portfolio-v2/about-gallery/photo-${number}.jpg?v=2`;
+    return `assets/images/portfolio-v2/about-gallery/photo-${number}.jpg?v=3`;
   });
 
   const shufflePhotos = photos => {
@@ -248,6 +248,7 @@ if (aboutGallery) {
       image.alt = '';
       image.decoding = 'async';
       image.loading = 'lazy';
+      image.addEventListener('error', () => image.remove(), { once: true });
       if (index >= photos.length) image.setAttribute('aria-hidden', 'true');
       track.append(image);
     });
@@ -267,10 +268,5 @@ if (aboutGallery) {
     aboutGallery.replaceChildren(...rows.map(createGalleryRow));
   };
 
-  Promise.all(galleryPhotos.map(photo => new Promise(resolve => {
-    const preloader = new Image();
-    preloader.addEventListener('load', () => resolve(photo), { once: true });
-    preloader.addEventListener('error', () => resolve(null), { once: true });
-    preloader.src = photo;
-  }))).then(loadedPhotos => showScrollingGallery(loadedPhotos.filter(Boolean)));
+  showScrollingGallery(galleryPhotos);
 }
