@@ -723,6 +723,68 @@ a { color: inherit; }
   .timeline-item:not(:last-child)::after { top: 9.5px; left: -51px; }
   .timeline-item { font-size: 14px; }
 
+  .about-hero {
+    display: grid;
+    height: auto;
+    min-height: 0;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    row-gap: 28px;
+    overflow: visible;
+    padding: 46px var(--gutter) 32px;
+  }
+  .about-portrait {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: stretch;
+    border-width: 4px;
+    border-radius: 9px;
+  }
+  .about-mobile-intro {
+    display: block;
+    width: 100%;
+    align-self: start;
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: stretch;
+    color: var(--black);
+    transform: none;
+  }
+  .about-mobile-intro strong {
+    display: block;
+    margin-bottom: 8px;
+    font-family: var(--display);
+    font-size: 48px;
+    line-height: .9;
+  }
+  .about-mobile-intro p {
+    display: block;
+    margin: 0;
+    font-size: clamp(14px, 5.4vw, 24px) !important;
+    line-height: 1.18;
+    white-space: nowrap;
+  }
+  .about-mobile-intro p br { display: none; }
+  .about-summary {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: auto;
+    margin-top: 0;
+    grid-column: 1;
+    grid-row: 3;
+    justify-self: stretch;
+  }
+  .about-summary h1,
+  .about-summary h2 { display: none; }
+
   .powers-section { padding-top: 54px; }
   .powers-grid { gap: 42px 38px; padding-inline: 14px; }
   .about-gallery { grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(2, 150px); margin-top: 100px; }
@@ -761,6 +823,7 @@ a { color: inherit; }
   }
   .section-heading::after { right: 25px; height: 2px; }
   .section-heading h2 { left: 2px; }
+  .home-page .section-heading h2 { font-size: var(--section-title-size) !important; }
   .section-star { top: 25px; transform: scale(.53); transform-origin: top right; }
   .project-visual { border-radius: 14px; }
   .project-card::before { border-radius: 14px; }
@@ -774,89 +837,6 @@ a { color: inherit; }
   .timeline-date { margin-bottom: 8px !important; }
   .experience-section .section-heading { margin-bottom: 10px; }
   .experience-section .timeline { padding-top: 0; }
-
-  .about-hero {
-    display: grid;
-    height: auto;
-    min-height: 0;
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: auto auto auto;
-    row-gap: 28px;
-    overflow: visible;
-    padding: 46px var(--gutter) 32px;
-  }
-  .wave--about,
-  .about-greeting { display: none; }
-  .about-portrait {
-    position: relative;
-    top: auto;
-    left: auto;
-    width: 100%;
-    max-width: none;
-    height: auto;
-    aspect-ratio: 3 / 2;
-    grid-column: 1;
-    grid-row: 1;
-    justify-self: stretch;
-    border-width: 4px;
-    border-radius: 9px;
-  }
-  .portrait-burst {
-    position: absolute;
-    top: 10px;
-    left: calc(100% - 56px);
-    width: 72px;
-    height: 72px;
-    transform: none;
-  }
-  .about-mobile-intro {
-    display: block;
-    width: 100%;
-    align-self: start;
-    grid-column: 1;
-    grid-row: 2;
-    justify-self: stretch;
-    color: var(--black);
-    transform: none;
-  }
-  .about-mobile-intro strong {
-    display: block;
-    margin-bottom: 8px;
-    font-family: var(--display);
-    font-size: 48px;
-    line-height: .9;
-  }
-  .about-mobile-intro p {
-    display: block;
-    margin: 0;
-    font-size: clamp(16px, 5.7vw, 24px) !important;
-    line-height: 1.18;
-    white-space: nowrap;
-  }
-  .about-mobile-intro p br { display: none; }
-  .about-summary {
-    position: relative;
-    top: auto;
-    left: auto;
-    width: auto;
-    margin-top: 0;
-    grid-column: 1 / -1;
-    grid-row: 3;
-  }
-  .about-summary h1,
-  .about-summary h2 { display: none; }
-  .about-summary .about-lede {
-    color: var(--muted);
-    font-size: 15px;
-    font-weight: 400;
-    line-height: var(--about-copy-line-height);
-  }
-  .about-summary p {
-    color: var(--muted);
-    font-size: 15px;
-    font-weight: 400;
-    line-height: var(--about-copy-line-height);
-  }
   .powers-section { padding-top: 32px; }
   .powers-section .section-heading { margin-bottom: 10px; }
   .powers-grid { grid-template-columns: 1fr; gap: 30px; padding: 0 2px; }
@@ -874,79 +854,6 @@ a { color: inherit; }
   .site-footer { height: 190px; min-height: 0; margin-top: 48px; }
   .site-footer--about { margin-top: 48px; }
   .site-footer p { top: 150px; padding-top: 0; font-size: 10px; }
-}
-
-/* Switch the bio to its phone layout when the landing-page curve disappears. */
-@media (min-width: 581px) and (max-width: 900px) {
-  .about-hero {
-    display: grid;
-    height: auto;
-    min-height: 0;
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: auto auto auto;
-    row-gap: 28px;
-    overflow: visible;
-    padding: 46px var(--gutter) 32px;
-  }
-  .about-portrait {
-    position: relative;
-    top: auto;
-    left: auto;
-    width: 100%;
-    max-width: none;
-    height: auto;
-    aspect-ratio: 3 / 2;
-    grid-column: 1;
-    grid-row: 1;
-    justify-self: stretch;
-    border-width: 4px;
-    border-radius: 9px;
-  }
-  .portrait-burst {
-    position: absolute;
-    top: 10px;
-    left: calc(100% - 56px);
-    width: 72px;
-    height: 72px;
-    transform: none;
-  }
-  .about-mobile-intro {
-    display: block;
-    width: 100%;
-    align-self: start;
-    grid-column: 1;
-    grid-row: 2;
-    justify-self: stretch;
-    color: var(--black);
-    transform: none;
-  }
-  .about-mobile-intro strong {
-    display: block;
-    margin-bottom: 8px;
-    font-family: var(--display);
-    font-size: 48px;
-    line-height: .9;
-  }
-  .about-mobile-intro p {
-    display: block;
-    margin: 0;
-    font-size: 24px !important;
-    line-height: 1.18;
-    white-space: nowrap;
-  }
-  .about-mobile-intro p br { display: none; }
-  .about-summary {
-    position: relative;
-    top: auto;
-    left: auto;
-    width: auto;
-    margin-top: 0;
-    grid-column: 1;
-    grid-row: 3;
-    justify-self: stretch;
-  }
-  .about-summary h1,
-  .about-summary h2 { display: none; }
 }
 
 /* Keep descriptive body copy consistent across every homepage breakpoint. */

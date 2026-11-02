@@ -183,6 +183,11 @@ if (menuButton && navLinks) {
   window.addEventListener('keydown', event => {
     if (event.key === 'Escape') closeMenu();
   });
+
+  const desktopNavigationQuery = window.matchMedia('(min-width: 901px)');
+  desktopNavigationQuery.addEventListener('change', event => {
+    if (event.matches) closeMenu();
+  });
 }
 
 const aboutNavLinks = document.querySelectorAll('.nav-links a[href="#about"], .hero-scroll-indicator[href="#about"]');
