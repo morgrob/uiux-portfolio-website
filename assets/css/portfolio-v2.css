@@ -463,7 +463,7 @@ a { color: inherit; }
   background: #ddd;
 }
 .about-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
-.portrait-burst { position: absolute; z-index: 6; top: 50.5px; left: calc(var(--about-content-edge) + 304.5px); width: 273px; height: 273px; max-width: none; filter: brightness(0); }
+.portrait-burst { position: absolute; z-index: 6; top: 51.5px; left: calc(var(--about-content-edge) + 301.5px); width: 273px; height: 273px; max-width: none; filter: brightness(0); }
 .about-greeting {
   position: absolute;
   z-index: 5;
