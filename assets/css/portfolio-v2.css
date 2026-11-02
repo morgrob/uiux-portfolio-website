@@ -583,20 +583,11 @@ a { color: inherit; }
   .home-hero__title-wrap { display: block; margin-top: 82px; }
   .home-hero__title { font-size: clamp(46px, 10vw, 86px); }
   .home-hero__title-wrap p { width: 96vw; font-size: clamp(14px, 2.6vw, 21px); }
-  .wave--hero { top: auto; bottom: 0; transform: scale(.72, .56); transform-origin: bottom center; }
-  .hero-scroll-indicator { bottom: 74px; gap: 16px; font-size: 22px; }
-  .hero-scroll-indicator::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: -10px;
-    bottom: -74px;
-    left: 50%;
-    width: 100vw;
-    background: var(--white);
-    transform: translateX(-50%);
-  }
+  .wave--hero { display: none; }
+  .hero-scroll-indicator { bottom: 28px; gap: 16px; color: var(--white); font-size: 22px; }
+  .hero-scroll-indicator::before { display: none; }
   .hero-scroll-indicator svg { width: 21px; height: 26px; stroke-width: 4.5px; }
+  .hero-scroll-indicator:focus-visible { outline-color: var(--white); }
   .work-section { padding-bottom: 80px; }
   .project-grid { display: flex; flex-direction: column; gap: 38px; }
   .project-card { gap: 10px; }
@@ -715,7 +706,6 @@ a { color: inherit; }
   .hero-motion-active .home-hero__title-wrap p {
     animation-name: hero-tagline-mobile-straight-enter;
   }
-  .wave--hero { display: none; }
   .hero-scroll-indicator {
     bottom: 18px;
     gap: 10px;
@@ -723,9 +713,7 @@ a { color: inherit; }
     color: var(--white);
     font-size: 15px;
   }
-  .hero-scroll-indicator::before { display: none; }
   .hero-scroll-indicator svg { width: 18px; height: 22px; stroke-width: 4px; }
-  .hero-scroll-indicator:focus-visible { outline-color: var(--white); }
   .section-heading {
     --section-title-top: 14px;
     --section-title-size: 21px;
