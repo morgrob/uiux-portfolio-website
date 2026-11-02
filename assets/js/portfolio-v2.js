@@ -96,7 +96,7 @@ if (aboutGreeting && aboutBand && howdyPath) {
     const burstBounds = bioPortraitBurst.getBoundingClientRect();
     const bandBounds = aboutBand.getBoundingClientRect();
     const portraitTop = greetingTextBounds.top - bandBounds.top + 20;
-    const burstTop = portraitTop - (burstBounds.height / 2);
+    const burstTop = portraitTop - (burstBounds.height / 2) + 2;
     const burstLeft = portraitBounds.right - bandBounds.left - (burstBounds.width / 2);
 
     bioPortrait.style.top = `${portraitTop.toFixed(2)}px`;
