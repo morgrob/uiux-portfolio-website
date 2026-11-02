@@ -871,6 +871,14 @@ a { color: inherit; }
   line-height: 1.4;
 }
 
+.home-page main .timeline-item .role {
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
 @media (min-width: 1241px) {
   .home-page main .about-summary p,
   .home-page main .about-summary p.about-lede {
