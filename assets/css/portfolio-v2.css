@@ -545,6 +545,10 @@ a { color: inherit; }
   transition: none;
 }
 
+.about-gallery.about-gallery--marquee img[src*="photo-11.jpg"] {
+  object-position: center top;
+}
+
 @keyframes about-gallery-loop {
   to { transform: translateX(calc(-50% - 4px)); }
 }
