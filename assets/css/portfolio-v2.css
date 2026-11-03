@@ -868,7 +868,7 @@ a { color: inherit; }
 .home-page main .project-copy > p:not(.project-meta) {
   color: var(--muted);
   font-family: var(--body);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.4;
 }
@@ -876,7 +876,7 @@ a { color: inherit; }
 .home-page main .timeline-item .role {
   color: var(--ink);
   font-family: var(--body);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.4;
 }
